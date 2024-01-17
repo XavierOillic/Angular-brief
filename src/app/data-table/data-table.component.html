@@ -1,0 +1,23 @@
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="dataUser.length > 0">
+    <tr>
+      <td>Mme</td>
+      <td>Marie Curie</td>
+      <td>66</td>
+      <td>female</td>
+      <td>Passy</td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="dataUser.length == 0">
+    No data
+  </tbody>
+</table>
