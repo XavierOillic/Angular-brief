@@ -8,16 +8,20 @@
       <th>Location</th>
     </tr>
   </thead>
+  <!--SI DataUser est superieur à 0, afiche moi une ligne-->
   <tbody *ngIf="dataUser.length > 0">
-    <tr>
-      <td>Mme</td>
-      <td>Marie Curie</td>
-      <td>66</td>
-      <td>female</td>
-      <td>Passy</td>
+    <!--Je boucle avec FOR pour afficher tous les éléments de mon tableau avec l'itérateur X sur le tableau DATAUSER-->
+    <tr *ngFor="let x of dataUser">
+      <!-- Pour trouver l'adresse des données, je m'aide du tableau de la console-->
+      <td>{{ x.name.title }}</td>
+      <td>{{ x.name.first }} {{ x.name.last }}</td>
+      <td>{{ x.dob.age }}</td>
+      <td>{{ x.gender }}</td>
+      <td>{{ x.location.city }}</td>
     </tr>
   </tbody>
+  <!--SI DataUser est égale à 0, affiche NO DATA-->
   <tbody *ngIf="dataUser.length == 0">
-    No data
+    no data
   </tbody>
 </table>

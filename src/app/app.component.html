@@ -3,7 +3,12 @@
 
   <h2>Mini App</h2>
 
-  <app-search-bar></app-search-bar>
+  <app-search-bar
+    (searchToParent)="transmitSearchToTs($event)"
+  ></app-search-bar>
+
   <app-filter-selector></app-filter-selector>
-  <app-data-table></app-data-table>
+
+  <app-data-table [dataUser]="usersToDisplay"></app-data-table>
+  <!--Ce dataUser[] vient de l'enfant crée en tableau initialisé à vide-->
 </div>
