@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { users } from 'src/users-data';
-import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-data-table',
@@ -11,7 +10,7 @@ export class DataTableComponent implements OnInit {
 
   constructor() {}
 
-  @Input() dataUser : []; 
+  @Input() dataUser : [];
   // Les Oreilles pour écouter le parent controlleur, avec un tableau initialisé à vide
   // qu'on enverra vers le HTML parent en proprieté binding [dataUser]
 
