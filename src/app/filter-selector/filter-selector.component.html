@@ -3,19 +3,40 @@
 
   <div class="inline-block">
     <label for="title-name">
-      <input type="radio" id="title-name" name="radio-filter" value="title" />
+      <input
+        type="radio"
+        id="title-name"
+        name="radio-filter"
+        value="title"
+        (change)="applyThisBtnFilter($event.target.value)"
+      />
+      <!--Valeur générique de l'event.target.value pour récupérer la VALUE 'title' de ce bouton-->
       <span class="label-body"> Title </span>
     </label>
   </div>
   <div class="inline-block">
     <label for="first-name">
-      <input type="radio" id="first-name" name="radio-filter" value="first" />
+      <input
+        type="radio"
+        id="first-name"
+        name="radio-filter"
+        value="first"
+        (change)="applyThisBtnFilter($event.target.value)"
+      />
+      <!--Valeur générique de l'event.target.value pour récupérer la VALUE 'first' de ce bouton-->
       <span class="label-body"> First Name </span>
     </label>
   </div>
   <div class="inline-block">
     <label for="last-name">
-      <input type="radio" id="last-name" name="radio-filter" value="last" />
+      <input
+        type="radio"
+        id="last-name"
+        name="radio-filter"
+        value="last"
+        (change)="applyThisBtnFilter($event.target.value)"
+      />
+      <!--Valeur générique de l'event.target.value pour récupérer la VALUE 'last' de ce bouton-->
       <span class="label-body"> Last Name </span>
     </label>
   </div>

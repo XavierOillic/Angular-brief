@@ -3,11 +3,11 @@
 
   <h2>Mini App</h2>
 
-  <app-filter-selector></app-filter-selector>
+  <app-search-bar (searchToParent)="filteredByText($event)"></app-search-bar>
 
-  <app-search-bar
-    (searchToParent)="transmitSearchToTs($event)"
-  ></app-search-bar>
+  <app-filter-selector
+    (filtrationBtnFromChild)="filteredByBtn($event)"
+  ></app-filter-selector>
 
   <app-data-table [dataUser]="usersToDisplayTamp"></app-data-table>
   <!--Ce dataUser[] vient de l'enfant crée en tableau initialisé à vide-->

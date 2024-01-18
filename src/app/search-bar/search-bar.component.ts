@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  @Output () searchToParent = new EventEmitter();
+  @Output () searchToParent = new EventEmitter<string>();
   // Ca c'est pour partir, EMITTER, vers le parent.
 
 entryName(searchPerson: any) { // le searchPerson === le *event du HTML enfant.
