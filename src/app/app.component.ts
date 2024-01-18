@@ -17,15 +17,17 @@ export class AppComponent implements OnInit {
 
   constructor(private dataService: DataService) {}
 
+// RECUPERE et STOCKE LA VALEUR des BOUTON.
 filteredByBtn(eventFromFilter:string) {
     console.log(`valeur du click chez le Parent ==> ${eventFromFilter}`)
     console.log(this.selectByBtn);
 
     this.selectByBtn = eventFromFilter;
 
-this.generalFilter()
-}
+  this.generalFilter()
+  }
 
+// RECUPERE et STOCKE LA VALEUR du TEXTE.
 filteredByText (receivedSearch: any) {
       console.log(`...dans  le PARENT ==>  ${receivedSearch.target.value}`);
       console.log(`I apply this filter on ${this.usersToDisplay.length} Users`);
@@ -35,10 +37,13 @@ filteredByText (receivedSearch: any) {
   this.generalFilter()
   }
 
+// Fait le travail de FILTRE GRACE AUX VALEURS RECUPEREES.
   generalFilter(){
-    this.usersToDisplayTamp = this.usersToDisplay.filter((UserModel) =>
-    UserModel.name[this.selectByBtn].toLowerCase().includes(this.selectByText)); 
-    // J'utilise USERMODEL (model) comme prédicat ?! dans le filtre. 
+    this.usersToDisplayTamp = this.usersToDisplay.filter((iterateurX) =>
+    iterateurX.name[this.selectByBtn].toLowerCase().includes(this.selectByText)); 
+    // ==> CE TAB TEMP. est égal au TAB FIXE filtré selon le USERMODEL (predicat) :
+    // ==> Dans ce TAB, je choisi un mode de recherche, rendu DYNAMIQUE sur l'OBJET, uniquement sur un objet, 
+    // pour prendre en compte l'un des trois btn, et qui inclurait ma SAISIE DE TEXTE.
   }
 
   ngOnInit() {

@@ -11,7 +11,7 @@ export class FilterSelectorComponent implements OnInit {
 //dataUser: any;
 //filterBtn: any;
 
-@Output() filtrationBtnFromChild = new EventEmitter();
+@Output() filtrationBtnFromChild = new EventEmitter<string>();
 
 applyThisBtnFilter(eventFromFilter: any) {
   //console.log(`valeur du click chez l'enfant ==> ${eventFromFilter}`)
