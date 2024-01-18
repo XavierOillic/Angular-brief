@@ -13,9 +13,15 @@ export class FilterSelectorComponent implements OnInit {
 
 @Output() filtrationBtnFromChild = new EventEmitter<string>();
 
+@Output() filtrationBtnCity = new EventEmitter<string>();
+
 applyThisBtnFilter(eventFromFilter: any) {
   //console.log(`valeur du click chez l'enfant ==> ${eventFromFilter}`)
   this.filtrationBtnFromChild.emit(eventFromFilter);
+}
+applyBtnCity(eventFilterCity: any) {
+  //console.log(`valeur du click chez l'enfant ==> ${eventFilterCity}`)
+  this.filtrationBtnCity.emit(eventFilterCity);
 }
   constructor() {}
 

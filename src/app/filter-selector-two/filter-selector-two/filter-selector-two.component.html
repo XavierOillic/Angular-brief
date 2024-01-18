@@ -1,0 +1,32 @@
+<div>
+  Here,
+
+  <div class="inline-block">
+    <label for="location-country">
+      <input
+        type="radio"
+        id="location-country"
+        name="radio-filter"
+        value="country"
+        (change)="filterByLocation($event.target.value)"
+      />
+      <!-- J'écoute l'evenement CHANGE, qui va déclencher la METHODE et m'envoyer l'EVENT-->
+      <!--Valeur générique de l'event.target.value pour récupérer la VALUE 'country' de ce bouton-->
+      <span class="label-body"> ...filter by Country :</span>
+    </label>
+  </div>
+  <div class="inline-block">
+    <label for="location-city">
+      <input
+        type="radio"
+        id="location-city"
+        name="radio-filter"
+        value="city"
+        (change)="filterByLocation($event.target.value)"
+      />
+      <!-- J'écoute l'evenement CHANGE, qui va déclencher la METHODE et m'envoyer l'EVENT-->
+      <!--Valeur générique de l'event.target.value pour récupérer la VALUE 'city' de ce bouton-->
+      <span class="label-body"> ...and by the City : </span>
+    </label>
+  </div>
+</div>

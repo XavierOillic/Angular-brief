@@ -9,6 +9,7 @@ export interface UserModel {
     }
     gender : string;
     location :{
+        country: string;
         city: string;
     }
 

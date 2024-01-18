@@ -5,7 +5,8 @@
       <th>Name</th>
       <th>Age</th>
       <th>Sex</th>
-      <th>Location</th>
+      <th>Country</th>
+      <th>City</th>
     </tr>
   </thead>
   <!--SI DataUser est superieur à 0, afiche moi une ligne-->
@@ -17,6 +18,7 @@
       <td>{{ x.name.first }} {{ x.name.last }}</td>
       <td>{{ x.dob.age }}</td>
       <td>{{ x.gender }}</td>
+      <td>{{ x.location.country }}</td>
       <td>{{ x.location.city }}</td>
     </tr>
   </tbody>

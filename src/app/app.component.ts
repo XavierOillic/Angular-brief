@@ -12,10 +12,21 @@ export class AppComponent implements OnInit {
   usersToDisplay: UserModel[] = []; // J'initialise le tableau vide qui va contenir le tableau.
   usersToDisplayTamp: UserModel[] = []; // J'initialise le tableau Tampon vide qui va contenir le tableau temporaire.
   
+  selectByCity: string = 'city';
   selectByBtn: string = 'first'; // J'initialisee la propriété qui stocke la valeur du bouton cliqué 
   selectByText: string = ''; //J'initialise la propriété qui stocke la valeur de la saisie texte
 
   constructor(private dataService: DataService) {}
+
+//RECUPERE et STOCKE LA VALEUR du BOUTON CITY.
+  filterByLocation(receivedCity){
+    console.log(`...dans le PARENT ==>  ${receivedCity}`);
+
+    this.selectByCity = receivedCity;
+
+    this.usersToDisplayTamp = this.usersToDisplay.filter((iterateurX) =>
+    iterateurX.location[this.selectByCity].toLowerCase().includes(this.selectByText)); 
+  }
 
 // RECUPERE et STOCKE LA VALEUR des BOUTON.
 filteredByBtn(eventFromFilter:string) {
@@ -23,8 +34,7 @@ filteredByBtn(eventFromFilter:string) {
     console.log(this.selectByBtn);
 
     this.selectByBtn = eventFromFilter;
-
-  this.generalFilter()
+    this.generalFilter()
   }
 
 // RECUPERE et STOCKE LA VALEUR du TEXTE.
@@ -33,14 +43,14 @@ filteredByText (receivedSearch: any) {
       console.log(`I apply this filter on ${this.usersToDisplay.length} Users`);
 
     this.selectByText = receivedSearch.target.value; // je target la valeur transmise dès la saisie par le champ de recherche
-
-  this.generalFilter()
+    this.generalFilter()
   }
 
 // Fait le travail de FILTRE GRACE AUX VALEURS RECUPEREES.
   generalFilter(){
     this.usersToDisplayTamp = this.usersToDisplay.filter((iterateurX) =>
     iterateurX.name[this.selectByBtn].toLowerCase().includes(this.selectByText)); 
+
     // ==> CE TAB TEMP. est égal au TAB FIXE filtré selon le USERMODEL (predicat) :
     // ==> Dans ce TAB, je choisi un mode de recherche, rendu DYNAMIQUE sur l'OBJET, uniquement sur un objet, 
     // pour prendre en compte l'un des trois btn, et qui inclurait ma SAISIE DE TEXTE.

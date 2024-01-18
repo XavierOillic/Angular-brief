@@ -7,6 +7,8 @@ import { DataService } from './data.service';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { FilterSelectorComponent } from './filter-selector/filter-selector.component';
+import { FilterSelectorTwoComponent } from './filter-selector-two/filter-selector-two/filter-selector-two.component';
+
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -15,6 +17,8 @@ import { FilterSelectorComponent } from './filter-selector/filter-selector.compo
     SearchBarComponent,
     DataTableComponent,
     FilterSelectorComponent,
+    FilterSelectorTwoComponent,
+
   ],
   bootstrap: [AppComponent],
   providers: [DataService],

@@ -1,14 +1,19 @@
 <div class="container">
-  <h1>Exercices Binding Angular</h1>
-
-  <h2>Mini App</h2>
-
-  <app-search-bar (searchToParent)="filteredByText($event)"></app-search-bar>
-
-  <app-filter-selector
-    (filtrationBtnFromChild)="filteredByBtn($event)"
-  ></app-filter-selector>
-
-  <app-data-table [dataUser]="usersToDisplayTamp"></app-data-table>
-  <!--Ce dataUser[] vient de l'enfant crée en tableau initialisé à vide-->
+  <div>
+    <!--<div><img src="app/assets/logo.png" height="40%" width="40%" /></div>-->
+    <h1>Exercices Binding Angular</h1>
+    <h2>Mini App</h2>
+  </div>
 </div>
+
+<app-search-bar (searchToParent)="filteredByText($event)"></app-search-bar>
+
+<app-filter-selector-two (btnByLocation)="filterByLocation($event)">
+</app-filter-selector-two>
+
+<app-filter-selector
+  (filtrationBtnFromChild)="filteredByBtn($event)"
+></app-filter-selector>
+
+<app-data-table [dataUser]="usersToDisplayTamp"></app-data-table>
+<!--Ce dataUser[] vient de l'enfant crée en tableau initialisé à vide-->
